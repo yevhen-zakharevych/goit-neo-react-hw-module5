@@ -1,0 +1,23 @@
+.nav {
+  border-bottom: 2px solid #ccc;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  margin: 0 10px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.active {
+  color: maroon;
+}
