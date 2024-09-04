@@ -12,7 +12,11 @@ function HomePage() {
 
     fetchTrendingMovies();
   }, []);
-  return <>HomePage</>;
+  return (
+    <>
+      <h1>Trending Today</h1>
+    </>
+  );
 }
 
 export default HomePage;
