@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useParams, Link, Outlet } from "react-router-dom";
+import { useEffect, useState, useRef } from "react";
+import { useParams, Link, Outlet, useLocation } from "react-router-dom";
 
 import styles from "./MovieDetailsPage.module.css";
 
@@ -8,6 +8,10 @@ import { getMovieById } from "../../api/MovieApi";
 function MovieDetailsPage() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
+
+  const location = useLocation();
+  const backLinkHref = useRef(location.state ?? "/");
+  console.log(location);
 
   useEffect(() => {
     if (!movieId) {
@@ -25,7 +29,7 @@ function MovieDetailsPage() {
 
   return (
     <>
-      <Link to={-1} className={styles.backButton}>
+      <Link to={backLinkHref.current} className={styles.backButton}>
         &#8592; Go back
       </Link>
       {movie && (
