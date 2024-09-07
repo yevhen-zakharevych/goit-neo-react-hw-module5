@@ -11,7 +11,6 @@ function MovieDetailsPage() {
 
   const location = useLocation();
   const backLinkHref = useRef(location.state ?? "/");
-  console.log(location);
 
   useEffect(() => {
     if (!movieId) {
